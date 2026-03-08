@@ -8,17 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(
-    service=Service(ChromeDriverManager().install()),
-    options=options
-)
 # DRIVER SETUP
-
-
-
-def setup_driver():
-
-    
+def setup_driver():   
     chrome_options = Options()
     chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--no-sandbox")
@@ -26,9 +17,14 @@ def setup_driver():
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(
+        service=Service(ChromeDriverManager().install()),
+        options=options
+    )
+    
+     
 
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 40)
 
     return driver, wait
 
