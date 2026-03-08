@@ -19,7 +19,7 @@ def setup_driver():
 
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
-        options=options
+        options=chrome_options
     )
     
      
