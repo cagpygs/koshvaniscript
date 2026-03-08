@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+selenium
+psycopg2-binary
+pandas
+openpyxl
